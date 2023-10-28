@@ -7,7 +7,7 @@ body {
 
 /* Styling for password length range */
 div {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 label {
@@ -29,29 +29,24 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* Styling for the checkbox inputs */
-fieldset {
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-}
-
-legend {
-  padding: 0 10px;
-}
-
-/* Styling for generated password and its associated button */
+/* Styling for generated password  */
 div p {
   display: inline-block;
   margin: 10px;
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 5px;
+  font-size: 15px;
 }
 
 /* Icon button styles */
 button > svg {
   vertical-align: middle;
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: center; /* Horizontally center the items */
 }
 
 /* Custom Checkboxes */
@@ -63,9 +58,9 @@ input[type='checkbox'] {
 
 .checkbox-label {
   position: relative;
-  padding-left: 35px;
+  padding-left: 30px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 20px;
   user-select: none;
 }
 
@@ -74,8 +69,8 @@ input[type='checkbox'] {
   position: absolute;
   left: 0;
   top: 0;
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   border: 2px solid #007bff;
   border-radius: 4px;
 }
@@ -96,10 +91,10 @@ input[type='checkbox']:checked ~ .checkbox-label:after {
 }
 
 .checkbox-label:after {
-  left: 9px;
-  top: 5px;
-  width: 8px;
-  height: 13px;
+  left: 7px;
+  top: 2px;
+  width: 7px;
+  height: 12px;
   border: solid white;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
@@ -117,7 +112,7 @@ input[type='checkbox']:disabled ~ .checkbox-label:before {
 
 /* Styling for custom range slider */
 input[type='range'] {
-  width: 50%;
+  width: 30%;
   height: 10px;
   background: transparent;
   -webkit-appearance: none;
@@ -129,7 +124,7 @@ input[type='range']:focus {
 
 input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
-  margin-top: -6px; /* Aligns the thumb with the track */
+  margin-top: -6px;
   width: 16px;
   height: 16px;
   background: #007bff;
@@ -138,7 +133,7 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 input[type='range']::-moz-range-thumb {
-  margin-top: -6px; /* Aligns the thumb with the track */
+  margin-top: -6px;
   width: 16px;
   height: 16px;
   background: #007bff;

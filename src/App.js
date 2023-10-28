@@ -81,42 +81,43 @@ const App = () => {
         passLength={passLength}
       />
 
-      <fieldset>
-        <legend>Characters used</legend>
-
+      <div className="checkbox-container">
         <PasswordCharset
-          id="lowerInput"
+          id="lowerCb"
           name="includeLower"
+          labelText="abc"
           handleIncludeCharSet={handleIncludeCharSet}
           checkedBoxCount={checkedBoxCount}
           includedCharset={includedCharsets.includeLower}
         />
 
         <PasswordCharset
-          id="upperInput"
+          id="upperCb"
           name="includeUpper"
+          labelText="ABC"
           handleIncludeCharSet={handleIncludeCharSet}
           checkedBoxCount={checkedBoxCount}
           includedCharset={includedCharsets.includeUpper}
         />
 
         <PasswordCharset
-          id="numInput"
+          id="numCb"
           name="includeNum"
+          labelText="123"
           handleIncludeCharSet={handleIncludeCharSet}
           checkedBoxCount={checkedBoxCount}
           includedCharset={includedCharsets.includeNum}
         />
 
         <PasswordCharset
-          id="symbolInput"
+          id="symbolCb"
           name="includeSymbol"
+          labelText="!$#"
           handleIncludeCharSet={handleIncludeCharSet}
           checkedBoxCount={checkedBoxCount}
           includedCharset={includedCharsets.includeSymbol}
         />
-      </fieldset>
-
+      </div>
       <div>
         <button
           onClick={() => {

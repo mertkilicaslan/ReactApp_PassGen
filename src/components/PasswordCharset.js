@@ -1,8 +1,14 @@
 import React from 'react';
 
 const PasswordCharset = (props) => {
-  const { id, name, includedCharset, handleIncludeCharSet, checkedBoxCount } =
-    props;
+  const {
+    id,
+    name,
+    labelText,
+    includedCharset,
+    handleIncludeCharSet,
+    checkedBoxCount,
+  } = props;
 
   return (
     <div>
@@ -15,7 +21,7 @@ const PasswordCharset = (props) => {
         disabled={includedCharset && checkedBoxCount === 1}
       />
       <label className="checkbox-label" htmlFor={id}>
-        {name}
+        {labelText}
       </label>
     </div>
   );
