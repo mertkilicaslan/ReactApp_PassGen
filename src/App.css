@@ -1,13 +1,16 @@
 /* General styling */
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
   text-align: center;
+
+  /* Declarations for extension mode of it */
+  /* width: 500px;
+  height: 125px;  */
 }
 
 /* Styling for password length range */
 div {
-  margin-bottom: 10px;
+  margin: 5px;
 }
 
 label {
@@ -15,13 +18,14 @@ label {
 }
 
 button {
-  padding: 8px 15px;
+  padding: 6px 12px;
   margin: 5px;
   cursor: pointer;
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
+  font-weight: 600;
 }
 
 button:disabled {
@@ -42,6 +46,7 @@ div p {
 /* Icon button styles */
 button > svg {
   vertical-align: middle;
+  padding: 2px 2px;
 }
 
 .checkbox-container {
@@ -58,9 +63,10 @@ input[type='checkbox'] {
 
 .checkbox-label {
   position: relative;
-  padding-left: 30px;
+  padding-left: 28px;
+  padding-top: 2px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 18px;
   user-select: none;
 }
 

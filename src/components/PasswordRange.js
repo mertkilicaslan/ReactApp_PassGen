@@ -6,8 +6,8 @@ const PasswordRange = (props) => {
   const { handlePassLength, passLength } = props;
 
   return (
-    <div>
-      <label htmlFor="passLength">Password length: {passLength} </label>
+    <>
+      <label htmlFor="passLength">Length: {passLength} </label>
       <button
         onClick={(e) => handlePassLength(e, passLength - 1)}
         disabled={passLength <= MIN_PASSWORD_LENGTH}
@@ -29,7 +29,7 @@ const PasswordRange = (props) => {
       >
         +
       </button>
-    </div>
+    </>
   );
 };
 
