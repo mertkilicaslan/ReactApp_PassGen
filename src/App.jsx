@@ -1,27 +1,27 @@
-import { useEffect, useState } from 'react';
-import PasswordRange from './components/PasswordRange';
-import PasswordCharset from './components/PasswordCharset';
+import { useEffect, useState } from "react";
+import PasswordRange from "./components/PasswordRange";
+import PasswordCharset from "./components/PasswordCharset";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopy as copyDone } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopy as copyDone } from "@fortawesome/free-regular-svg-icons";
 import {
   faArrowRotateRight,
   faCopy as copy,
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 
-import './App.css';
+import "./App.css";
 
 import {
   CHARSET_LOWER,
   CHARSET_UPPER,
   CHARSET_NUM,
   CHARSET_SYMBOL,
-} from './util/constants';
+} from "./utils/constants";
 
 const App = () => {
   const [checkedBoxCount, setCheckedBoxCount] = useState(1);
   const [isCopyClipboard, setIsCopyClipboard] = useState(false);
-  const [generatedPass, setGeneratedPass] = useState('');
+  const [generatedPass, setGeneratedPass] = useState("");
   const [regeneratePass, setReneratedPass] = useState(false);
   const [passLength, setPassLength] = useState(15);
   const [includedCharsets, setIncludedCharsets] = useState({
@@ -35,18 +35,18 @@ const App = () => {
     const newCount = Object.values(includedCharsets).filter(Boolean).length;
     setCheckedBoxCount(newCount);
 
-    let passwordCharset = '';
+    let passwordCharset = "";
 
-    passwordCharset += includedCharsets.includeLower ? CHARSET_LOWER : '';
-    passwordCharset += includedCharsets.includeUpper ? CHARSET_UPPER : '';
-    passwordCharset += includedCharsets.includeNum ? CHARSET_NUM : '';
-    passwordCharset += includedCharsets.includeSymbol ? CHARSET_SYMBOL : '';
+    passwordCharset += includedCharsets.includeLower ? CHARSET_LOWER : "";
+    passwordCharset += includedCharsets.includeUpper ? CHARSET_UPPER : "";
+    passwordCharset += includedCharsets.includeNum ? CHARSET_NUM : "";
+    passwordCharset += includedCharsets.includeSymbol ? CHARSET_SYMBOL : "";
 
     setGeneratedPass(generatePassword(passLength, passwordCharset));
   }, [passLength, includedCharsets, regeneratePass]);
 
   const generatePassword = (length, charset) => {
-    let password = '';
+    let password = "";
     for (let i = 0; i < length; i++) {
       const randomIndex = Math.floor(Math.random() * charset.length);
       password += charset[randomIndex];
@@ -70,7 +70,7 @@ const App = () => {
         setTimeout(() => setIsCopyClipboard(false), 750);
       })
       .catch((err) => {
-        console.error('Failed to copy text: ', err);
+        console.error("Failed to copy text: ", err);
       });
   };
 
@@ -119,11 +119,7 @@ const App = () => {
         />
       </div>
       <div>
-        <button
-          onClick={() => {
-            setReneratedPass((prevState) => !prevState);
-          }}
-        >
+        <button onClick={() => setReneratedPass((prevState) => !prevState)}>
           <FontAwesomeIcon icon={faArrowRotateRight} size="lg" />
         </button>
         <p>{generatedPass}</p>

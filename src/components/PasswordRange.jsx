@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH } from '../util/constants';
+import { MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH } from "../utils/constants";
 
 const PasswordRange = (props) => {
   const { handlePassLength, passLength } = props;
